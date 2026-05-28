@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iKima Support</title>
+<meta name="description" content="iKima support — frequently asked questions, setup guide, and contact.">
+<style>
+  :root {
+    --bg: #080e1a; --card: #0f1828;
+    --teal: #2FBCB2; --blue: #3382E5;
+    --text: #ffffff; --muted: rgba(255,255,255,0.55);
+    --border: rgba(47,188,178,0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif; line-height: 1.65; }
+  a { color: var(--teal); text-decoration: none; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--border); }
+  .logo { font-size: 20px; font-weight: 800; }
+  .logo span { color: var(--teal); }
+  .nav-back { font-size: 14px; color: var(--muted); }
+  .nav-back:hover { color: var(--text); }
+
+  .hero { text-align: center; padding: 64px 24px 48px; }
+  .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+  .hero p { font-size: 16px; color: var(--muted); }
+
+  .content { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* QUICK SETUP */
+  .setup { background: linear-gradient(135deg, rgba(47,188,178,.07), rgba(51,130,229,.04)); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 48px; }
+  .setup h2 { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+  .steps { counter-reset: step; display: flex; flex-direction: column; gap: 14px; }
+  .step { display: flex; gap: 14px; align-items: flex-start; }
+  .step-num { counter-increment: step; background: var(--teal); color: #000; font-weight: 800; font-size: 13px; min-width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+  .step-text { font-size: 15px; color: var(--muted); }
+  .step-text strong { color: var(--text); }
+
+  /* FAQ */
+  .faq-section { margin-bottom: 40px; }
+  .faq-section h2 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  details { border-bottom: 1px solid rgba(255,255,255,.06); }
+  details:last-child { border-bottom: none; }
+  summary { font-size: 15px; font-weight: 600; padding: 16px 0; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 20px; font-weight: 300; color: var(--teal); transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  .answer { font-size: 14px; color: var(--muted); padding-bottom: 18px; line-height: 1.7; }
+  .answer p { margin-bottom: 10px; }
+  .answer ul { padding-left: 18px; margin-top: 6px; }
+  .answer li { margin-bottom: 6px; }
+  .answer code { background: rgba(255,255,255,.08); padding: 2px 7px; border-radius: 5px; font-size: 13px; font-family: 'SF Mono', monospace; }
+
+  /* CONTACT */
+  .contact { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; text-align: center; margin-top: 48px; }
+  .contact h2 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+  .contact p { font-size: 15px; color: var(--muted); margin-bottom: 20px; }
+  .contact-btn { display: inline-block; background: var(--teal); color: #000; padding: 12px 28px; border-radius: 24px; font-weight: 700; font-size: 14px; }
+  .contact-btn:hover { opacity: .88; color: #000; }
+
+  footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); margin: 0 8px; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 600px) {
+    nav { padding: 16px 20px; }
+    .content { padding: 0 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">i<span>K</span>ima</div>
+  <a href="https://teccat.github.io/ikima/marketing/" class="nav-back">← Back</a>
+</nav>
+
+<div class="hero">
+  <h1>Support</h1>
+  <p>iKima — Breathing &amp; Calm for Apple Watch</p>
+</div>
+
+<div class="content">
+
+  <!-- QUICK SETUP -->
+  <div class="setup">
+    <h2>⚡ Quick Setup</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Install iKima on your <strong>iPhone</strong> from the App Store. The Watch app installs automatically.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">On iPhone: open <strong>Health → Browse → Heart → Heart Rate</strong> and confirm iKima is listed. If not, go to <strong>Health → your profile → Apps → iKima → turn on Heart Rate</strong>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Put on your Apple Watch and open <strong>iKima</strong>. Pick a technique, set your pace, and start breathing.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">After your session, tap a mood emoji to see your <strong>Session Insight</strong> — heart rate before/after and HRV.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEART RATE FAQ -->
+  <div class="faq-section">
+    <h2>Heart Rate &amp; HRV</h2>
+
+    <details>
+      <summary>Why is my heart rate not showing during a session?</summary>
+      <div class="answer">
+        <p>Heart rate requires explicit permission. On your iPhone, go to:</p>
+        <p><code>Health → your profile photo → Apps → iKima → turn on Heart Rate</code></p>
+        <p>Also make sure you are wearing the Watch snugly on your wrist — the optical sensor needs good skin contact.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>The heart rate in Session Insight is different from what I see on HomeView — which is correct?</summary>
+      <div class="answer">
+        <p>Both are correct, but from different moments:</p>
+        <ul>
+          <li><strong>HomeView</strong> shows the current live reading (updated every few seconds)</li>
+          <li><strong>Session Insight</strong> shows a snapshot taken at the start and end of your session</li>
+        </ul>
+        <p>If you check HomeView some time after your session ends, the numbers will naturally differ. This is expected.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What is HRV and how is it calculated?</summary>
+      <div class="answer">
+        <p>HRV (Heart Rate Variability) measures the variation in time between heartbeats. A higher SDNN value generally indicates a more relaxed, resilient nervous system.</p>
+        <p>iKima reads the most recent SDNN sample from the past 7 days in Apple Health. Apple Watch measures HRV automatically during sleep or rest — it is not calculated in real time during a session.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>My HRV seems very low — is that normal?</summary>
+      <div class="answer">
+        <p>HRV varies enormously between individuals (15–100+ ms is a normal range). It is also affected by age, sleep quality, stress, hydration, and recent exercise.</p>
+        <p>What matters most is your personal trend over time, not comparison with others. Consistent breathing practice has been shown to improve HRV over weeks.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- SESSION FAQ -->
+  <div class="faq-section">
+    <h2>Sessions &amp; Breathing</h2>
+
+    <details>
+      <summary>The session ended before I finished — what happened?</summary>
+      <div class="answer">
+        <p>iKima runs the exact number of cycles you selected. When all cycles complete, the session ends naturally and moves to the mood check-in screen.</p>
+        <p>If the session ended unexpectedly, make sure the Watch app has not been force-quit. If the issue persists, please contact us.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I change the speed of the breathing pattern?</summary>
+      <div class="answer">
+        <p>Yes. On the pattern selection screen, tap the pace selector before starting. Options are Slow, Standard, and Fast — each adjusts the duration of each breath phase.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Will the session continue if my Watch screen turns off?</summary>
+      <div class="answer">
+        <p>Yes. iKima uses an Extended Runtime Session to keep the haptic timer running even when the screen is off. You will still feel the tap guidance on your wrist.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>My session data is not showing in the Statistics tab.</summary>
+      <div class="answer">
+        <p>Session data is saved on your Watch using SwiftData and synced to your iPhone automatically. If statistics appear missing, try opening the iPhone app — this triggers a sync. Data may take a few seconds to appear after a session ends.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- APP FAQ -->
+  <div class="faq-section">
+    <h2>App &amp; Account</h2>
+
+    <details>
+      <summary>Do I need an account to use iKima?</summary>
+      <div class="answer">
+        <p>No account is required. iKima works entirely on-device with no login, no cloud sync, and no subscription.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Does iKima store my health data in the cloud?</summary>
+      <div class="answer">
+        <p>No. Heart rate and HRV data never leave your device. All computation is on-device. Only anonymised, non-identifiable session statistics (pattern used, duration, completion rate) may be included in aggregate analytics — no raw biometric values are transmitted.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I delete my data?</summary>
+      <div class="answer">
+        <p>To delete all session records: open the iPhone app → History → swipe left on individual sessions to delete, or delete and reinstall the app to clear all local data.</p>
+        <p>Heart rate data in Apple Health is managed separately via the Health app on your iPhone.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Which Apple Watch models are supported?</summary>
+      <div class="answer">
+        <p>iKima requires <strong>watchOS 10 or later</strong> (Apple Watch Series 4 and newer). An iPhone running iOS 17+ is required as a companion.</p>
+        <p>Heart rate monitoring requires a Watch model with an optical heart sensor — all supported models include one.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact">
+    <h2>Still need help?</h2>
+    <p>We usually reply within one business day.</p>
+    <a href="mailto:support@teccat.app" class="contact-btn">Email Support</a>
+  </div>
+
+</div>
+
+<footer>
+  <a href="https://teccat.github.io/ikima/marketing/">iKima</a>
+  <a href="https://teccat.github.io/ikima/privacy/">Privacy Policy</a>
+  <a href="mailto:support@teccat.app">Contact</a>
+  <div style="margin-top:12px;">© 2026 Teccat. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

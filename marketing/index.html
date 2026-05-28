@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iKima — Breathing & Calm for Apple Watch</title>
+<meta name="description" content="iKima is a science-backed breathing app for Apple Watch. Measure your heart rate before and after every session. 5 techniques, real-time biometrics, on-device.">
+<style>
+  :root {
+    --bg: #080e1a; --card: #0f1828;
+    --teal: #2FBCB2; --teal-light: #5de8e2;
+    --blue: #3382E5; --text: #ffffff;
+    --muted: rgba(255,255,255,0.55);
+    --border: rgba(47,188,178,0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif; line-height: 1.6; }
+  a { color: var(--teal); text-decoration: none; }
+
+  /* NAV */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--border); }
+  .logo { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+  .logo span { color: var(--teal); }
+  .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--muted); }
+  .nav-links a { transition: color .2s; }
+  .nav-links a:hover { color: var(--text); }
+  .badge { background: var(--teal); color: #000; padding: 7px 18px; border-radius: 20px; font-weight: 700; font-size: 13px; }
+
+  /* HERO */
+  .hero { text-align: center; padding: 96px 24px 72px; max-width: 780px; margin: 0 auto; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(38px, 7vw, 68px); font-weight: 800; line-height: 1.06; letter-spacing: -2px; margin-bottom: 22px; }
+  .hero h1 em { font-style: normal; background: linear-gradient(135deg, var(--teal-light), var(--blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero p { font-size: 17px; color: var(--muted); max-width: 500px; margin: 0 auto 36px; }
+  .app-store-btn { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #000; padding: 13px 28px; border-radius: 14px; font-weight: 700; font-size: 15px; transition: opacity .2s; }
+  .app-store-btn:hover { opacity: .88; color: #000; }
+  .app-store-btn svg { width: 20px; height: 20px; }
+  .platform { margin-top: 16px; font-size: 12px; color: var(--muted); }
+
+  /* STATS */
+  .stats { display: flex; justify-content: center; gap: 56px; padding: 44px 24px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .stat-num { font-size: 34px; font-weight: 800; color: var(--teal); }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; text-align: center; }
+
+  /* SECTIONS */
+  .section { padding: 72px 40px; max-width: 1060px; margin: 0 auto; }
+  .section-label { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+  .section-heading { font-size: clamp(26px, 4vw, 40px); font-weight: 800; letter-spacing: -1px; margin-bottom: 44px; }
+
+  /* TECHNIQUES GRID */
+  .techniques { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+  .t-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 24px 20px; transition: border-color .2s; }
+  .t-card:hover { border-color: var(--teal); }
+  .t-tag { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+  .t-name { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .t-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+  /* FEATURES */
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; }
+  .f-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 30px; }
+  .f-icon { font-size: 30px; margin-bottom: 14px; }
+  .f-title { font-size: 17px; font-weight: 700; margin-bottom: 7px; }
+  .f-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  /* SCIENCE */
+  .science { background: linear-gradient(135deg, rgba(47,188,178,.07), rgba(51,130,229,.04)); border: 1px solid var(--border); border-radius: 22px; padding: 44px 40px; margin: 0 40px; }
+  .science h2 { font-size: 24px; font-weight: 800; margin-bottom: 20px; }
+  .science p { font-size: 15px; color: var(--muted); margin-bottom: 12px; line-height: 1.7; }
+  .science cite { font-size: 12px; color: rgba(255,255,255,.3); font-style: normal; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 44px 24px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); margin: 0 10px; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 600px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .section { padding: 56px 20px; }
+    .science { margin: 0 20px; padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">i<span>K</span>ima</div>
+  <div class="nav-links">
+    <a href="#techniques">Techniques</a>
+    <a href="#features">Features</a>
+    <a href="https://teccat.github.io/ikima/support/">Support</a>
+    <a href="https://teccat.github.io/ikima/privacy/">Privacy</a>
+  </div>
+  <a href="https://apps.apple.com/app/id6745037126" class="badge">Download</a>
+</nav>
+
+<section class="hero">
+  <p class="eyebrow">Apple Watch · iPhone</p>
+  <h1>Breathe better.<br><em>Feel the difference.</em></h1>
+  <p>iKima guides you through science-backed breathing techniques and measures your heart rate before and after every session — on your wrist, privately, on-device.</p>
+  <a href="https://apps.apple.com/app/id6745037126" class="app-store-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    Download on the App Store
+  </a>
+  <p class="platform">Requires iPhone + Apple Watch · watchOS 10+</p>
+</section>
+
+<div class="stats">
+  <div>
+    <div class="stat-num">5</div>
+    <div class="stat-label">Breathing techniques</div>
+  </div>
+  <div>
+    <div class="stat-num">2 min</div>
+    <div class="stat-label">Minimum session</div>
+  </div>
+  <div>
+    <div class="stat-num">100%</div>
+    <div class="stat-label">On-device · Private</div>
+  </div>
+  <div>
+    <div class="stat-num">0</div>
+    <div class="stat-label">Accounts required</div>
+  </div>
+</div>
+
+<section class="section" id="techniques">
+  <p class="section-label">Techniques</p>
+  <h2 class="section-heading">Every breath, science-backed.</h2>
+  <div class="techniques">
+    <div class="t-card">
+      <div class="t-tag">4-4-4-4</div>
+      <div class="t-name">Box Breathing</div>
+      <div class="t-desc">Navy SEAL focus technique. Equal inhale, hold, exhale, rest for calm under pressure.</div>
+    </div>
+    <div class="t-card">
+      <div class="t-tag">4-7-8</div>
+      <div class="t-name">4-7-8 Breathing</div>
+      <div class="t-desc">Extended exhale activates the parasympathetic system. Fast sleep onset.</div>
+    </div>
+    <div class="t-card">
+      <div class="t-tag">Double inhale</div>
+      <div class="t-name">Physiological Sigh</div>
+      <div class="t-desc">Stanford-validated. Double inhale + long exhale — fastest known stress reset.</div>
+    </div>
+    <div class="t-card">
+      <div class="t-tag">Belly</div>
+      <div class="t-name">Diaphragmatic</div>
+      <div class="t-desc">Stimulates the vagus nerve. Lowers cortisol and resting heart rate over time.</div>
+    </div>
+    <div class="t-card">
+      <div class="t-tag">5-5</div>
+      <div class="t-name">Resonance</div>
+      <div class="t-desc">Synchronises breath and heart rate. Clinically maximises HRV.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <p class="section-label">Features</p>
+  <h2 class="section-heading">Built for your wrist.</h2>
+  <div class="features">
+    <div class="f-card">
+      <div class="f-icon">❤️</div>
+      <div class="f-title">Real-time Heart Rate</div>
+      <div class="f-desc">See your heart rate live during every session. Compare before and after to measure the effect of your practice.</div>
+    </div>
+    <div class="f-card">
+      <div class="f-icon">📳</div>
+      <div class="f-title">Haptic Guidance</div>
+      <div class="f-desc">Gentle taps guide each inhale, hold, and exhale — no need to look at the screen.</div>
+    </div>
+    <div class="f-card">
+      <div class="f-icon">🔒</div>
+      <div class="f-title">Private by Design</div>
+      <div class="f-desc">All computation on-device. No account, no cloud sync, no biometric data leaving your Watch.</div>
+    </div>
+    <div class="f-card">
+      <div class="f-icon">📊</div>
+      <div class="f-title">Practice Statistics</div>
+      <div class="f-desc">7-day chart, streak counter, and your favourite technique — track your consistency over time.</div>
+    </div>
+    <div class="f-card">
+      <div class="f-icon">😊</div>
+      <div class="f-title">Mood Check-in</div>
+      <div class="f-desc">Log how you feel before and after each session to see your emotional patterns.</div>
+    </div>
+    <div class="f-card">
+      <div class="f-icon">🌐</div>
+      <div class="f-title">English & 繁體中文</div>
+      <div class="f-desc">Fully localised in English and Traditional Chinese.</div>
+    </div>
+  </div>
+</section>
+
+<div class="science">
+  <h2>The science of breathing.</h2>
+  <p>Controlled breathing directly activates the parasympathetic nervous system via the vagus nerve — the body's built-in calm switch. Each technique in iKima targets a specific physiological mechanism: CO₂ clearance, heart rate variability, cortisol reduction, or sleep onset.</p>
+  <p>Heart rate variability (HRV) is the gold-standard marker of stress resilience. Regular breathing practice has been shown in peer-reviewed research to increase HRV, lower resting heart rate, and improve mood over weeks of consistent use.</p>
+  <cite>References: Zaccaro et al. 2018 (Front. Hum. Neurosci.) · Balban et al. 2023 (Cell Reports Medicine) · Cole et al. 1999 (NEJM)</cite>
+</div>
+
+<section class="section">
+  <p style="text-align:center; font-size:17px; color:var(--muted); max-width:480px; margin:0 auto 28px;">Ready to feel the difference?</p>
+  <div style="text-align:center;">
+    <a href="https://apps.apple.com/app/id6745037126" class="app-store-btn">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download on the App Store
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div style="font-size:18px;font-weight:800;margin-bottom:12px;">i<span style="color:var(--teal)">K</span>ima</div>
+  <div>
+    <a href="https://teccat.github.io/ikima/privacy/">Privacy Policy</a>
+    <a href="https://teccat.github.io/ikima/support/">Support</a>
+    <a href="mailto:support@teccat.app">Contact</a>
+  </div>
+  <div style="margin-top:16px;">© 2026 Teccat. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iKima — Privacy Policy · 隱私權政策</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 20px; color: #1c1c1e; line-height: 1.75; }
+  h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+  .meta { color: #8e8e93; font-size: 14px; margin-bottom: 8px; }
+  .lang-switch { margin-bottom: 36px; display: flex; gap: 12px; }
+  .lang-btn { font-size: 13px; padding: 5px 14px; border-radius: 16px; border: 1px solid #d1d1d6; cursor: pointer; background: #fff; color: #3a3a3c; }
+  .lang-btn.active { background: #007AFF; color: #fff; border-color: #007AFF; }
+  h2 { font-size: 17px; font-weight: 600; margin-top: 36px; margin-bottom: 8px; color: #1c1c1e; border-top: 1px solid #f2f2f7; padding-top: 24px; }
+  p, li { font-size: 15px; color: #3a3a3c; }
+  ul { padding-left: 20px; margin-top: 6px; }
+  li { margin-bottom: 5px; }
+  a { color: #007AFF; }
+  .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e5e5ea; color: #8e8e93; font-size: 13px; }
+  .zh { display: none; }
+  .en { display: block; }
+  body.show-zh .zh { display: block; }
+  body.show-zh .en { display: none; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy · 隱私權政策</h1>
+<div class="meta">iKima · Last updated / 最後更新：May 28, 2026</div>
+
+<div class="lang-switch">
+  <button class="lang-btn active" onclick="setLang('en')">English</button>
+  <button class="lang-btn" onclick="setLang('zh')">繁體中文</button>
+</div>
+
+<!-- ======== ENGLISH ======== -->
+<div class="en">
+
+<p>iKima ("we", "our", or "the app") is a breathing and heart rate wellness app for Apple Watch and iPhone. We are committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights.</p>
+
+<h2>1. Data We Collect</h2>
+<p>iKima collects only the minimum data necessary to provide its features:</p>
+<ul>
+  <li><strong>Health data</strong> — heart rate, heart rate variability (HRV), and resting heart rate, read from Apple HealthKit with your explicit permission.</li>
+  <li><strong>Session data</strong> — breathing session records (pattern, duration, cycles, mood check-ins) stored locally on your device using SwiftData.</li>
+  <li><strong>App preferences</strong> — settings such as weekly session goals, reminder times, and language preference, stored locally via UserDefaults.</li>
+  <li><strong>Anonymous usage events</strong> — see Section 4 below.</li>
+</ul>
+
+<h2>2. Data We Do NOT Collect</h2>
+<ul>
+  <li>We do not collect your name, email address, or any account information.</li>
+  <li>We do not transmit health or session data to any external server.</li>
+  <li>We do not collect device advertising identifiers (IDFA/IDFV) or precise location.</li>
+  <li>We do not use advertising SDKs or social media SDKs.</li>
+  <li>We do not sell or share your data with third parties.</li>
+</ul>
+
+<h2>3. HealthKit</h2>
+<p>Health data accessed through Apple HealthKit is used solely to display real-time heart rate during sessions and to show personal wellness trends within the app. This data is never transmitted outside your device. We do not request access to Health Records or any HealthKit categories beyond heart rate, HRV, and resting heart rate. The app does not write any data back to HealthKit.</p>
+
+<h2>4. Anonymous Analytics</h2>
+<p>To understand how the app is used and to improve future versions, iKima collects anonymous usage events. These events contain <strong>no personally identifiable information</strong>.</p>
+<p>Examples of events collected:</p>
+<ul>
+  <li>App launched, session started, session completed or abandoned</li>
+  <li>Which breathing pattern was selected and for how long</li>
+  <li>Whether HealthKit permission was granted or skipped</li>
+  <li>Device platform (iPhone or Apple Watch), iOS/watchOS version, device model</li>
+  <li>Hour of day and day of week (no exact timestamp)</li>
+</ul>
+<p>Events are <strong>never linked to you as an individual</strong>. No name, email, Apple ID, location, health data, or device identifier is included.</p>
+<p>Events are buffered locally and sent in batches to Mixpanel, a third-party analytics service hosted in the United States. Mixpanel's privacy policy is available at <a href="https://mixpanel.com/legal/privacy-policy/">mixpanel.com/legal/privacy-policy</a>. Only anonymous, non-identifiable event data is transmitted — no health data, no personal identifiers.</p>
+
+<h2>5. How We Use Your Data</h2>
+<table style="width:100%;border-collapse:collapse;font-size:14px;margin-top:8px;">
+  <thead>
+    <tr style="background:#f2f2f7;">
+      <th style="text-align:left;padding:8px 10px;border:1px solid #e5e5ea;">Data Type</th>
+      <th style="text-align:left;padding:8px 10px;border:1px solid #e5e5ea;">How Collected</th>
+      <th style="text-align:left;padding:8px 10px;border:1px solid #e5e5ea;">Purpose</th>
+      <th style="text-align:left;padding:8px 10px;border:1px solid #e5e5ea;">Shared With</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Heart Rate &amp; HRV</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Apple HealthKit (read-only, with permission)</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Display live HR during sessions; show before/after comparison in results</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Nobody — stays on device</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Session Records</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Generated by app activity, stored locally via SwiftData</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Display history, statistics, streak, favourite pattern</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Nobody — stays on device</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Mood Check-ins</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">User input (emoji selection before/after session)</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Show mood trend in results screen</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Nobody — stays on device</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">App Preferences</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">User settings, stored locally via UserDefaults</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Personalise reminders, goals, language</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Nobody — stays on device</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Anonymous Usage Events</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Automatically generated (no health data, no identifiers)</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Understand app usage patterns; improve future versions</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Mixpanel (anonymous only — see §4)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>6. On-Device Insight</h2>
+<p>Session feedback (heart rate delta and HRV chip) is computed entirely on your device. No data is sent to any AI or cloud API to generate this feedback. The app works fully offline.</p>
+
+<h2>7. Data Storage &amp; Security</h2>
+<ul>
+  <li><strong>Personal data (health, sessions, preferences)</strong> — stored locally on your Apple Watch and iPhone only. iCloud sync, if enabled by you, is governed by Apple's iCloud Privacy Policy.</li>
+  <li><strong>Anonymous analytics</strong> — transmitted over HTTPS (TLS 1.2+) and stored with AES-256 encryption at rest. Insert-only access enforced; no client can read stored events.</li>
+</ul>
+
+<h2>8. Your Rights — Opt-Out &amp; Data Deletion</h2>
+<p>You have full control over your data:</p>
+<ul>
+  <li><strong>Revoke HealthKit access</strong> — Go to iPhone → Settings → Health → Data Access &amp; Devices → iKima → turn off Heart Rate. The app continues to work without biometric data.</li>
+  <li><strong>Delete session records</strong> — Delete the iKima app from your iPhone and Apple Watch. All local session data (SwiftData) and preferences (UserDefaults) are permanently deleted.</li>
+  <li><strong>Opt out of anonymous analytics</strong> — Email us at <a href="mailto:ikima.wellness@gmail.com">ikima.wellness@gmail.com</a> with subject "Analytics Opt-Out" and your anonymous device ID (found in Settings → About). We will delete any events associated with that ID from Mixpanel within 30 days. Note: because events contain no personal identifiers, we cannot guarantee complete association, but we will make best efforts.</li>
+  <li><strong>Request data deletion</strong> — Email <a href="mailto:ikima.wellness@gmail.com">ikima.wellness@gmail.com</a>. Since no personal data is stored on our servers, deletion primarily applies to anonymous analytics events as described above.</li>
+</ul>
+
+<h2>9. Third-Party Services</h2>
+<p>iKima uses the following third-party service:</p>
+<ul>
+  <li><strong>Mixpanel</strong> (analytics) — receives only anonymous, non-identifiable usage events. No health data. No personal identifiers. Mixpanel is committed to the same level of data protection described in this policy. See <a href="https://mixpanel.com/legal/privacy-policy/">Mixpanel Privacy Policy</a>.</li>
+</ul>
+
+<h2>10. Children's Privacy</h2>
+<p>iKima is not directed at children under 13. We do not knowingly collect data from children.</p>
+
+<h2>11. Changes to This Policy</h2>
+<p>We may update this policy from time to time. The updated date at the top of this page will reflect any changes. Continued use of the app constitutes acceptance of the revised policy.</p>
+
+<h2>12. Contact</h2>
+<p>If you have questions about this privacy policy, please contact us at: <a href="mailto:ikima.wellness@gmail.com">ikima.wellness@gmail.com</a></p>
+
+</div>
+
+<!-- ======== 繁體中文 ======== -->
+<div class="zh">
+
+<p>iKima（「我們」或「本應用程式」）是一款專為 Apple Watch 與 iPhone 設計的呼吸與心率健康應用程式。我們致力於保護您的隱私。本政策說明我們收集哪些資料、如何使用，以及您的相關權利。</p>
+
+<h2>1. 我們收集的資料</h2>
+<p>iKima 僅收集提供功能所需的最少資料：</p>
+<ul>
+  <li><strong>健康資料</strong> — 在您明確授權下，透過 Apple HealthKit 讀取心率、心率變異性（HRV）與靜止心率。</li>
+  <li><strong>練習紀錄</strong> — 呼吸練習紀錄（模式、時長、輪數、情緒記錄），以 SwiftData 儲存於本機裝置。</li>
+  <li><strong>應用程式偏好設定</strong> — 每週練習目標、提醒時間、語言設定等，以 UserDefaults 儲存於本機。</li>
+  <li><strong>匿名使用事件</strong> — 詳見第 4 節。</li>
+</ul>
+
+<h2>2. 我們不收集的資料</h2>
+<ul>
+  <li>我們不收集您的姓名、電子郵件或任何帳號資訊。</li>
+  <li>我們不會將健康或練習資料傳送至任何外部伺服器。</li>
+  <li>我們不收集裝置廣告識別碼（IDFA/IDFV）或精確位置。</li>
+  <li>我們不使用廣告 SDK 或社群媒體 SDK。</li>
+  <li>我們不會出售或與第三方共享您的資料。</li>
+</ul>
+
+<h2>3. HealthKit</h2>
+<p>透過 Apple HealthKit 存取的健康資料，僅用於在練習期間顯示即時心率，以及在應用程式內呈現個人健康趨勢。此資料絕不傳出您的裝置。我們不申請健康紀錄或心率、HRV、靜止心率以外的任何 HealthKit 類別存取權限。本應用程式不會回寫任何資料至 HealthKit。</p>
+
+<h2>4. 匿名分析</h2>
+<p>為了解應用程式的使用方式並改善未來版本，iKima 收集匿名使用事件。這些事件<strong>不包含任何個人識別資訊</strong>。</p>
+<p>收集的事件範例：</p>
+<ul>
+  <li>應用程式啟動、練習開始、練習完成或中止</li>
+  <li>選擇的呼吸模式及練習時長</li>
+  <li>是否授予或略過 HealthKit 權限</li>
+  <li>裝置平台（iPhone 或 Apple Watch）、iOS/watchOS 版本、裝置型號</li>
+  <li>一天中的小時與星期（無確切時間戳記）</li>
+</ul>
+<p>事件<strong>絕不連結至您個人</strong>，不包含姓名、電子郵件、Apple ID、位置、健康資料或裝置識別碼。</p>
+<p>事件於本機緩衝後，以批次方式傳送至 Mixpanel（位於美國的第三方分析服務）。Mixpanel 隱私政策請參閱 <a href="https://mixpanel.com/legal/privacy-policy/">mixpanel.com/legal/privacy-policy</a>。傳送內容僅為匿名、不可識別個人的事件資料，不含健康資料或個人識別碼。</p>
+
+<h2>5. 資料使用方式</h2>
+<table style="width:100%;border-collapse:collapse;font-size:14px;margin-top:8px;">
+  <thead>
+    <tr style="background:#f2f2f7;">
+      <th style="text-align:left;padding:8px 10px;border:1px solid #e5e5ea;">資料類型</th>
+      <th style="text-align:left;padding:8px 10px;border:1px solid #e5e5ea;">收集方式</th>
+      <th style="text-align:left;padding:8px 10px;border:1px solid #e5e5ea;">用途</th>
+      <th style="text-align:left;padding:8px 10px;border:1px solid #e5e5ea;">共享對象</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">心率與 HRV</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Apple HealthKit（唯讀，需授權）</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">練習期間顯示即時心率；結果頁顯示前後對比</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">無 — 僅存裝置</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">練習紀錄</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">由 app 活動產生，以 SwiftData 儲存於本機</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">顯示歷史紀錄、統計、連續天數、最愛模式</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">無 — 僅存裝置</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">情緒記錄</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">使用者輸入（練習前後 emoji 選擇）</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">結果頁顯示情緒趨勢</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">無 — 僅存裝置</td>
+    </tr>
+    <tr style="background:#fafafa;">
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">應用程式偏好設定</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">使用者設定，以 UserDefaults 儲存於本機</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">個人化提醒、目標、語言</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">無 — 僅存裝置</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">匿名使用事件</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">自動產生（不含健康資料或識別碼）</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">了解使用模式；改善未來版本</td>
+      <td style="padding:8px 10px;border:1px solid #e5e5ea;">Mixpanel（僅匿名資料，見第 4 節）</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>6. 裝置端分析</h2>
+<p>練習回饋（心率變化與 HRV 標籤）完全在您的裝置上運算，不會傳送至任何 AI 或雲端 API。本應用程式可完全離線使用。</p>
+
+<h2>7. 資料儲存與安全性</h2>
+<ul>
+  <li><strong>個人資料（健康、練習、偏好設定）</strong> — 僅儲存於您的 Apple Watch 與 iPhone 本機。若您啟用 iCloud 同步，則適用 Apple iCloud 隱私政策。</li>
+  <li><strong>匿名分析資料</strong> — 透過 HTTPS（TLS 1.2+）傳輸，靜態資料以 AES-256 加密儲存，並強制執行僅限寫入存取，無法從客戶端讀取已儲存的事件。</li>
+</ul>
+
+<h2>8. 您的權利 — 退出與資料刪除</h2>
+<p>您對自己的資料擁有完整控制權：</p>
+<ul>
+  <li><strong>撤銷 HealthKit 存取權限</strong> — 前往 iPhone → 設定 → 健康 → 資料存取與裝置 → iKima → 關閉心率。App 在無生理資料的情況下仍可正常使用。</li>
+  <li><strong>刪除練習紀錄</strong> — 從 iPhone 與 Apple Watch 刪除 iKima app。所有本機練習資料（SwiftData）與偏好設定（UserDefaults）將被永久刪除。</li>
+  <li><strong>退出匿名分析</strong> — 請寄信至 <a href="mailto:ikima.wellness@gmail.com">ikima.wellness@gmail.com</a>，主旨填寫「Analytics Opt-Out」，並附上您的匿名裝置 ID（可於設定 → 關於中查看）。我們將在 30 天內從 Mixpanel 刪除與該 ID 相關的事件。注意：由於事件不含個人識別碼，無法保證完全關聯，但我們會盡力處理。</li>
+  <li><strong>申請資料刪除</strong> — 請寄信至 <a href="mailto:ikima.wellness@gmail.com">ikima.wellness@gmail.com</a>。由於我們的伺服器不儲存任何個人資料，刪除主要適用於上述匿名分析事件。</li>
+</ul>
+
+<h2>9. 第三方服務</h2>
+<p>iKima 使用以下第三方服務：</p>
+<ul>
+  <li><strong>Mixpanel</strong>（分析）— 僅接收匿名、不可識別個人的使用事件，不含健康資料或個人識別碼。Mixpanel 承諾提供與本政策相同等級的資料保護。詳見 <a href="https://mixpanel.com/legal/privacy-policy/">Mixpanel 隱私政策</a>。</li>
+</ul>
+
+<h2>10. 兒童隱私</h2>
+<p>iKima 不針對 13 歲以下兒童。我們不會在知情的情況下收集兒童資料。</p>
+
+<h2>11. 政策變更</h2>
+<p>我們可能不定期更新本政策。頁面頂部的更新日期將反映任何變更。繼續使用本應用程式即表示接受修訂後的政策。</p>
+
+<h2>12. 聯絡我們</h2>
+<p>如對本隱私政策有任何疑問，請透過以下方式聯絡我們：<a href="mailto:ikima.wellness@gmail.com">ikima.wellness@gmail.com</a></p>
+
+</div>
+
+<div class="footer">© 2026 iKima · Teccat. All rights reserved · 版權所有</div>
+
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('show-zh', lang === 'zh');
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.textContent.trim() === (lang === 'zh' ? '繁體中文' : 'English'));
+  });
+}
+</script>
+
+</body>
+</html>
