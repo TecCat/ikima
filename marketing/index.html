@@ -17,14 +17,27 @@
   body { background: var(--bg); color: var(--text); font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif; line-height: 1.6; }
   a { color: var(--teal); text-decoration: none; }
 
+  /* LANG TOGGLE */
+  .lang-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all .2s; }
+  .lang-btn:hover { border-color: var(--teal); color: var(--teal); }
+  [lang-show="zh"] { display: none; }
+  body.zh [lang-show="en"] { display: none; }
+  body.zh [lang-show="zh"] { display: revert; }
+
   /* NAV */
   nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--border); }
   .logo { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
   .logo span { color: var(--teal); }
-  .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--muted); }
+  .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--muted); align-items: center; }
   .nav-links a { transition: color .2s; }
   .nav-links a:hover { color: var(--text); }
   .badge { background: var(--teal); color: #000; padding: 7px 18px; border-radius: 20px; font-weight: 700; font-size: 13px; }
+
+  /* STORY */
+  .story { max-width: 640px; margin: 0 auto 64px; padding: 0 24px; text-align: center; }
+  .story h2 { font-size: 26px; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.5px; }
+  .story p { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+  .story .highlight { color: var(--text); font-weight: 600; }
 
   /* HERO */
   .hero { text-align: center; padding: 96px 24px 72px; max-width: 780px; margin: 0 auto; }
@@ -86,126 +99,192 @@
 <nav>
   <div class="logo">i<span>K</span>ima</div>
   <div class="nav-links">
-    <a href="#techniques">Techniques</a>
-    <a href="#features">Features</a>
+    <a href="#techniques" lang-show="en">Techniques</a>
+    <a href="#techniques" lang-show="zh">呼吸法</a>
+    <a href="#features" lang-show="en">Features</a>
+    <a href="#features" lang-show="zh">功能</a>
     <a href="https://teccat.github.io/ikima/support/">Support</a>
     <a href="https://teccat.github.io/ikima/privacy/">Privacy</a>
+    <button class="lang-btn" onclick="toggleLang()">繁中 / EN</button>
   </div>
-  <a href="https://apps.apple.com/app/id6771791464" class="badge">Download</a>
+  <a href="https://apps.apple.com/app/id6771791464" class="badge" lang-show="en">Download</a>
+  <a href="https://apps.apple.com/app/id6771791464" class="badge" lang-show="zh">下載</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <p class="eyebrow">Apple Watch · iPhone</p>
-  <h1>Breathe better.<br><em>Feel the difference.</em></h1>
-  <p>iKima guides you through science-backed breathing techniques and measures your heart rate before and after every session — on your wrist, privately, on-device.</p>
+  <h1 lang-show="en">Breathe better.<br><em>Feel the difference.</em></h1>
+  <h1 lang-show="zh">學會呼吸，<br><em>感受不同。</em></h1>
+  <p lang-show="en">iKima guides you through science-backed breathing techniques and measures your heart rate before and after every session — on your wrist, privately, on-device.</p>
+  <p lang-show="zh">iKima 透過科學呼吸法引導你練習，並自動記錄每次練習前後的心率變化——在你的手腕上，完全私密，不離開裝置。</p>
   <a href="https://apps.apple.com/app/id6771791464" class="app-store-btn">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-    Download on the App Store
+    <span lang-show="en">Download on the App Store</span>
+    <span lang-show="zh">在 App Store 下載</span>
   </a>
-  <p class="platform">Requires iPhone + Apple Watch · watchOS 10+</p>
+  <p class="platform" lang-show="en">Requires iPhone + Apple Watch · watchOS 10+</p>
+  <p class="platform" lang-show="zh">需要 iPhone + Apple Watch · watchOS 10+</p>
 </section>
 
+<!-- STORY -->
+<section class="story">
+  <div lang-show="en">
+    <h2>Why I built iKima</h2>
+    <p>Two years ago, I started experiencing anxiety regularly. I tried many approaches — meditation, journaling, exercise. They all helped, but they all required <span class="highlight">preparation</span>.</p>
+    <p>What I eventually discovered: <span class="highlight">breath regulation is the only technique you can do anywhere, anytime, with zero setup.</span> The science is solid. But every time I actually felt anxious, I couldn't remember the steps — and every app I tried was too complex to use in that moment.</p>
+    <p>So I built iKima. Put on your Apple Watch, and you can start a breathing session in under 10 seconds. The haptics guide you through every phase. No menus to navigate. No screen to stare at.</p>
+    <p style="color:var(--teal);font-weight:700;">Less than a cup of coffee. One-time purchase, no subscription.</p>
+  </div>
+  <div lang-show="zh">
+    <h2>為什麼我做了 iKima</h2>
+    <p>兩年前，我開始有焦慮的問題。試過很多方法——冥想、日記、運動。都有效，但都需要<span class="highlight">準備</span>。</p>
+    <p>後來發現一件事：<span class="highlight">呼吸調節是唯一一個隨時可以做、不需要任何準備的方法。</span>科學也支持這一點。但每次真的焦慮發作，我根本不記得步驟——每個 app 都太複雜，光找到功能就已經放棄了。</p>
+    <p>所以我做了 iKima。戴上 Apple Watch，10 秒內就能開始練習。手錶震動帶你走過每個步驟，不用看螢幕，不用記規則。</p>
+    <p style="color:var(--teal);font-weight:700;">比一杯咖啡還便宜。一次買斷，沒有訂閱。</p>
+  </div>
+</section>
+
+<!-- STATS -->
 <div class="stats">
   <div>
     <div class="stat-num">5</div>
-    <div class="stat-label">Breathing techniques</div>
+    <div class="stat-label" lang-show="en">Breathing techniques</div>
+    <div class="stat-label" lang-show="zh">種呼吸法</div>
   </div>
   <div>
     <div class="stat-num">2 min</div>
-    <div class="stat-label">Minimum session</div>
+    <div class="stat-label" lang-show="en">Minimum session</div>
+    <div class="stat-label" lang-show="zh">最短練習時間</div>
   </div>
   <div>
     <div class="stat-num">100%</div>
-    <div class="stat-label">On-device · Private</div>
+    <div class="stat-label" lang-show="en">On-device · Private</div>
+    <div class="stat-label" lang-show="zh">本機運算 · 完全私密</div>
   </div>
   <div>
     <div class="stat-num">0</div>
-    <div class="stat-label">Accounts required</div>
+    <div class="stat-label" lang-show="en">Accounts required</div>
+    <div class="stat-label" lang-show="zh">不需要帳號</div>
   </div>
 </div>
 
+<!-- TECHNIQUES -->
 <section class="section" id="techniques">
-  <p class="section-label">Techniques</p>
-  <h2 class="section-heading">Every breath, science-backed.</h2>
+  <p class="section-label" lang-show="en">Techniques</p>
+  <p class="section-label" lang-show="zh">呼吸法</p>
+  <h2 class="section-heading" lang-show="en">Every breath, science-backed.</h2>
+  <h2 class="section-heading" lang-show="zh">每一口呼吸，都有科學根據。</h2>
   <div class="techniques">
     <div class="t-card">
       <div class="t-tag">4-4-4-4</div>
-      <div class="t-name">Box Breathing</div>
-      <div class="t-desc">Navy SEAL focus technique. Equal inhale, hold, exhale, rest for calm under pressure.</div>
+      <div class="t-name" lang-show="en">Box Breathing</div>
+      <div class="t-name" lang-show="zh">方形呼吸</div>
+      <div class="t-desc" lang-show="en">Navy SEAL focus technique. Equal inhale, hold, exhale, rest for calm under pressure.</div>
+      <div class="t-desc" lang-show="zh">海豹部隊的專注技術。等長吸氣、閉氣、吐氣、休息，在壓力下保持冷靜。</div>
     </div>
     <div class="t-card">
       <div class="t-tag">4-7-8</div>
       <div class="t-name">4-7-8 Breathing</div>
-      <div class="t-desc">Extended exhale activates the parasympathetic system. Fast sleep onset.</div>
+      <div class="t-desc" lang-show="en">Extended exhale activates the parasympathetic system. Fast sleep onset.</div>
+      <div class="t-desc" lang-show="zh">延長吐氣啟動副交感神經系統，幫助快速入睡。</div>
     </div>
     <div class="t-card">
       <div class="t-tag">Double inhale</div>
-      <div class="t-name">Physiological Sigh</div>
-      <div class="t-desc">Stanford-validated. Double inhale + long exhale — fastest known stress reset.</div>
+      <div class="t-name" lang-show="en">Physiological Sigh</div>
+      <div class="t-name" lang-show="zh">生理嘆息</div>
+      <div class="t-desc" lang-show="en">Stanford-validated. Double inhale + long exhale — fastest known stress reset.</div>
+      <div class="t-desc" lang-show="zh">史丹佛研究驗證。雙重吸氣 + 長吐氣——目前已知最快的壓力重置方式。</div>
     </div>
     <div class="t-card">
       <div class="t-tag">Belly</div>
-      <div class="t-name">Diaphragmatic</div>
-      <div class="t-desc">Stimulates the vagus nerve. Lowers cortisol and resting heart rate over time.</div>
+      <div class="t-name" lang-show="en">Diaphragmatic</div>
+      <div class="t-name" lang-show="zh">腹式呼吸</div>
+      <div class="t-desc" lang-show="en">Stimulates the vagus nerve. Lowers cortisol and resting heart rate over time.</div>
+      <div class="t-desc" lang-show="zh">刺激迷走神經，長期練習可降低皮質醇和靜止心率。</div>
     </div>
     <div class="t-card">
       <div class="t-tag">5-5</div>
-      <div class="t-name">Resonance</div>
-      <div class="t-desc">Synchronises breath and heart rate. Clinically maximises HRV.</div>
+      <div class="t-name" lang-show="en">Resonance</div>
+      <div class="t-name" lang-show="zh">共鳴呼吸</div>
+      <div class="t-desc" lang-show="en">Synchronises breath and heart rate. Clinically maximises HRV.</div>
+      <div class="t-desc" lang-show="zh">同步呼吸與心率，臨床研究顯示可最大化心率變異性（HRV）。</div>
     </div>
   </div>
 </section>
 
+<!-- FEATURES -->
 <section class="section" id="features">
-  <p class="section-label">Features</p>
-  <h2 class="section-heading">Built for your wrist.</h2>
+  <p class="section-label" lang-show="en">Features</p>
+  <p class="section-label" lang-show="zh">功能</p>
+  <h2 class="section-heading" lang-show="en">Built for your wrist.</h2>
+  <h2 class="section-heading" lang-show="zh">為你的手腕而生。</h2>
   <div class="features">
     <div class="f-card">
       <div class="f-icon">❤️</div>
-      <div class="f-title">Real-time Heart Rate</div>
-      <div class="f-desc">See your heart rate live during every session. Compare before and after to measure the effect of your practice.</div>
+      <div class="f-title" lang-show="en">Real-time Heart Rate</div>
+      <div class="f-title" lang-show="zh">即時心率</div>
+      <div class="f-desc" lang-show="en">See your heart rate live during every session. Compare before and after to measure the effect of your practice.</div>
+      <div class="f-desc" lang-show="zh">練習中即時顯示心率。比較練習前後數據，讓你看見呼吸對身體的真實影響。</div>
     </div>
     <div class="f-card">
       <div class="f-icon">📳</div>
-      <div class="f-title">Haptic Guidance</div>
-      <div class="f-desc">Gentle taps guide each inhale, hold, and exhale — no need to look at the screen.</div>
+      <div class="f-title" lang-show="en">Haptic Guidance</div>
+      <div class="f-title" lang-show="zh">震動引導</div>
+      <div class="f-desc" lang-show="en">Gentle taps guide each inhale, hold, and exhale — no need to look at the screen.</div>
+      <div class="f-desc" lang-show="zh">輕柔震動引導每個吸氣、閉氣與吐氣——完全不需要看螢幕。</div>
     </div>
     <div class="f-card">
       <div class="f-icon">🔒</div>
-      <div class="f-title">Private by Design</div>
-      <div class="f-desc">All computation on-device. No account, no cloud sync, no biometric data leaving your Watch.</div>
+      <div class="f-title" lang-show="en">Private by Design</div>
+      <div class="f-title" lang-show="zh">隱私優先設計</div>
+      <div class="f-desc" lang-show="en">All computation on-device. No account, no cloud sync, no biometric data leaving your Watch.</div>
+      <div class="f-desc" lang-show="zh">所有運算在裝置本機完成。不需帳號、不上傳雲端、生物數據不離開你的手錶。</div>
     </div>
     <div class="f-card">
       <div class="f-icon">📊</div>
-      <div class="f-title">Practice Statistics</div>
-      <div class="f-desc">7-day chart, streak counter, and your favourite technique — track your consistency over time.</div>
+      <div class="f-title" lang-show="en">Practice Statistics</div>
+      <div class="f-title" lang-show="zh">練習統計</div>
+      <div class="f-desc" lang-show="en">7-day chart, streak counter, and your favourite technique — track your consistency over time.</div>
+      <div class="f-desc" lang-show="zh">7 天折線圖、連續天數、最常用呼吸法——追蹤你的練習一致性。</div>
     </div>
     <div class="f-card">
       <div class="f-icon">😊</div>
-      <div class="f-title">Mood Check-in</div>
-      <div class="f-desc">Log how you feel before and after each session to see your emotional patterns.</div>
+      <div class="f-title" lang-show="en">Mood Check-in</div>
+      <div class="f-title" lang-show="zh">情緒紀錄</div>
+      <div class="f-desc" lang-show="en">Log how you feel before and after each session to see your emotional patterns.</div>
+      <div class="f-desc" lang-show="zh">記錄每次練習前後的情緒，觀察自己的情緒變化模式。</div>
     </div>
     <div class="f-card">
       <div class="f-icon">🌐</div>
-      <div class="f-title">English & 繁體中文</div>
-      <div class="f-desc">Fully localised in English and Traditional Chinese.</div>
+      <div class="f-title" lang-show="en">English & 繁體中文</div>
+      <div class="f-title" lang-show="zh">繁體中文 & English</div>
+      <div class="f-desc" lang-show="en">Fully localised in English and Traditional Chinese.</div>
+      <div class="f-desc" lang-show="zh">完整支援繁體中文與英文介面。</div>
     </div>
   </div>
 </section>
 
+<!-- SCIENCE -->
 <div class="science">
-  <h2>The science of breathing.</h2>
-  <p>Controlled breathing directly activates the parasympathetic nervous system via the vagus nerve — the body's built-in calm switch. Each technique in iKima targets a specific physiological mechanism: CO₂ clearance, heart rate variability, cortisol reduction, or sleep onset.</p>
-  <p>Heart rate variability (HRV) is the gold-standard marker of stress resilience. Regular breathing practice has been shown in peer-reviewed research to increase HRV, lower resting heart rate, and improve mood over weeks of consistent use.</p>
+  <h2 lang-show="en">The science of breathing.</h2>
+  <h2 lang-show="zh">呼吸的科學。</h2>
+  <p lang-show="en">Controlled breathing directly activates the parasympathetic nervous system via the vagus nerve — the body's built-in calm switch. Each technique in iKima targets a specific physiological mechanism: CO₂ clearance, heart rate variability, cortisol reduction, or sleep onset.</p>
+  <p lang-show="zh">有控制的呼吸透過迷走神經直接啟動副交感神經系統——這是身體內建的「冷靜開關」。iKima 的每種呼吸法都針對特定的生理機制：CO₂ 排除、心率變異性、皮質醇降低或睡眠啟動。</p>
+  <p lang-show="en">Heart rate variability (HRV) is the gold-standard marker of stress resilience. Regular breathing practice has been shown in peer-reviewed research to increase HRV, lower resting heart rate, and improve mood over weeks of consistent use.</p>
+  <p lang-show="zh">心率變異性（HRV）是壓力韌性的黃金指標。同行評審研究顯示，定期呼吸練習可在數週內提升 HRV、降低靜止心率並改善情緒。</p>
   <cite>References: Zaccaro et al. 2018 (Front. Hum. Neurosci.) · Balban et al. 2023 (Cell Reports Medicine) · Cole et al. 1999 (NEJM)</cite>
 </div>
 
+<!-- FINAL CTA -->
 <section class="section">
-  <p style="text-align:center; font-size:17px; color:var(--muted); max-width:480px; margin:0 auto 28px;">Ready to feel the difference?</p>
+  <p style="text-align:center; font-size:17px; color:var(--muted); max-width:480px; margin:0 auto 28px;" lang-show="en">Ready to feel the difference?</p>
+  <p style="text-align:center; font-size:17px; color:var(--muted); max-width:480px; margin:0 auto 28px;" lang-show="zh">準備好感受不同了嗎？</p>
   <div style="text-align:center;">
     <a href="https://apps.apple.com/app/id6771791464" class="app-store-btn">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-      Download on the App Store
+      <span lang-show="en">Download on the App Store</span>
+      <span lang-show="zh">在 App Store 下載</span>
     </a>
   </div>
 </section>
@@ -219,6 +298,25 @@
   </div>
   <div style="margin-top:16px;">© 2026 iKima · HTW. All rights reserved · 版權所有</div>
 </footer>
+
+<script>
+  function toggleLang() {
+    document.body.classList.toggle('zh');
+    const isZh = document.body.classList.contains('zh');
+    document.documentElement.lang = isZh ? 'zh-Hant' : 'en';
+    localStorage.setItem('ikima-lang', isZh ? 'zh' : 'en');
+  }
+
+  // Auto-detect: restore saved preference, or use browser language
+  (function() {
+    const saved = localStorage.getItem('ikima-lang');
+    const browserZh = navigator.language && navigator.language.startsWith('zh');
+    if (saved === 'zh' || (!saved && browserZh)) {
+      document.body.classList.add('zh');
+      document.documentElement.lang = 'zh-Hant';
+    }
+  })();
+</script>
 
 </body>
 </html>
