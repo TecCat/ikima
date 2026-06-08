@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080e1a"/>
+      <stop offset="100%" style="stop-color:#0f1828"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2FBCB2"/>
+      <stop offset="100%" style="stop-color:#3382E5"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="rgba(47,188,178,0.05)" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="rgba(47,188,178,0.05)" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="630" stroke="rgba(47,188,178,0.05)" stroke-width="1"/>
+  <line x1="800" y1="0" x2="800" y2="630" stroke="rgba(47,188,178,0.05)" stroke-width="1"/>
+
+  <!-- Glow circle -->
+  <circle cx="820" cy="315" r="280" fill="rgba(47,188,178,0.05)" filter="url(#glow)"/>
+  <circle cx="820" cy="315" r="200" fill="rgba(47,188,178,0.04)"/>
+  <circle cx="820" cy="315" r="120" fill="rgba(47,188,178,0.06)"/>
+
+  <!-- Watch ring (simplified) -->
+  <circle cx="820" cy="315" r="160" fill="none" stroke="url(#tealGrad)" stroke-width="3" stroke-dasharray="502" stroke-dashoffset="120" opacity="0.6"/>
+  <circle cx="820" cy="315" r="160" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="3"/>
+
+  <!-- Watch body -->
+  <rect x="752" y="235" width="136" height="160" rx="34" ry="34" fill="#1a2235" stroke="rgba(47,188,178,0.3)" stroke-width="1.5"/>
+
+  <!-- Watch screen content -->
+  <rect x="764" y="255" width="112" height="120" rx="8" fill="#0d1520"/>
+  <!-- HR number -->
+  <text x="820" y="295" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="28" font-weight="700" fill="#2FBCB2">↓6.5</text>
+  <text x="820" y="315" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="11" fill="rgba(255,255,255,0.5)">bpm avg drop</text>
+  <!-- Waveform line -->
+  <polyline points="770,345 785,338 795,352 808,330 820,348 832,335 845,350 858,332 870,345" fill="none" stroke="#2FBCB2" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Watch band top -->
+  <rect x="776" y="205" width="88" height="35" rx="10" fill="#151e2e"/>
+  <!-- Watch band bottom -->
+  <rect x="776" y="390" width="88" height="35" rx="10" fill="#151e2e"/>
+
+  <!-- Left text content -->
+  <!-- App name -->
+  <text x="100" y="230" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="72" font-weight="800" letter-spacing="-2" fill="white">iKima</text>
+
+  <!-- Teal accent line -->
+  <rect x="100" y="250" width="80" height="3" rx="2" fill="url(#tealGrad)"/>
+
+  <!-- Tagline ZH -->
+  <text x="100" y="305" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="22" fill="rgba(255,255,255,0.75)">Apple Watch 震動引導呼吸</text>
+  <text x="100" y="338" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="22" fill="rgba(255,255,255,0.75)">不需看螢幕 · 2 分鐘找回平靜</text>
+
+  <!-- Feature pills -->
+  <rect x="100" y="375" width="140" height="34" rx="17" fill="rgba(47,188,178,0.12)" stroke="rgba(47,188,178,0.25)" stroke-width="1"/>
+  <text x="170" y="397" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="13" fill="#2FBCB2">心率趨勢卡</text>
+
+  <rect x="252" y="375" width="100" height="34" rx="17" fill="rgba(47,188,178,0.12)" stroke="rgba(47,188,178,0.25)" stroke-width="1"/>
+  <text x="302" y="397" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="13" fill="#2FBCB2">HRV 追蹤</text>
+
+  <rect x="364" y="375" width="120" height="34" rx="17" fill="rgba(47,188,178,0.12)" stroke="rgba(47,188,178,0.25)" stroke-width="1"/>
+  <text x="424" y="397" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="13" fill="#2FBCB2">5 種呼吸技巧</text>
+
+  <!-- Bottom: App Store badge area -->
+  <rect x="100" y="435" width="200" height="52" rx="14" fill="white"/>
+  <text x="200" y="458" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="11" fill="#333">Download on the</text>
+  <text x="200" y="477" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="18" font-weight="700" fill="#000">App Store</text>
+
+  <!-- Subtitle EN -->
+  <text x="100" y="570" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="16" fill="rgba(255,255,255,0.3)">Breathing &amp; Calm · iPhone + Apple Watch</text>
+</svg>
