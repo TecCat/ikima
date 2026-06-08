@@ -75,5 +75,5 @@
   <text x="200" y="477" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="18" font-weight="700" fill="#000">App Store</text>
 
   <!-- Subtitle -->
-  <text x="100" y="570" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="16" fill="rgba(255,255,255,0.3)">Breathing &amp; Calm · iPhone + Apple Watch · 中文版請點右上角 EN</text>
+  <text x="100" y="570" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="16" fill="rgba(255,255,255,0.3)">Breathing &amp; Calm · iPhone + Apple Watch · Available on the App Store</text>
 </svg>
