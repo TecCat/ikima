@@ -55,25 +55,25 @@
   <!-- Teal accent line -->
   <rect x="100" y="250" width="80" height="3" rx="2" fill="url(#tealGrad)"/>
 
-  <!-- Tagline ZH -->
-  <text x="100" y="305" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="22" fill="rgba(255,255,255,0.75)">Apple Watch 震動引導呼吸</text>
-  <text x="100" y="338" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="22" fill="rgba(255,255,255,0.75)">不需看螢幕 · 2 分鐘找回平靜</text>
+  <!-- Tagline EN -->
+  <text x="100" y="305" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="22" fill="rgba(255,255,255,0.75)">Your Apple Watch guides every breath.</text>
+  <text x="100" y="338" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="22" fill="rgba(255,255,255,0.75)">No screen needed · Calm in 2 minutes.</text>
 
-  <!-- Feature pills -->
-  <rect x="100" y="375" width="140" height="34" rx="17" fill="rgba(47,188,178,0.12)" stroke="rgba(47,188,178,0.25)" stroke-width="1"/>
-  <text x="170" y="397" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="13" fill="#2FBCB2">心率趨勢卡</text>
+  <!-- Feature pills EN -->
+  <rect x="100" y="375" width="150" height="34" rx="17" fill="rgba(47,188,178,0.12)" stroke="rgba(47,188,178,0.25)" stroke-width="1"/>
+  <text x="175" y="397" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="13" fill="#2FBCB2">HR Trend Card</text>
 
-  <rect x="252" y="375" width="100" height="34" rx="17" fill="rgba(47,188,178,0.12)" stroke="rgba(47,188,178,0.25)" stroke-width="1"/>
-  <text x="302" y="397" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="13" fill="#2FBCB2">HRV 追蹤</text>
+  <rect x="262" y="375" width="130" height="34" rx="17" fill="rgba(47,188,178,0.12)" stroke="rgba(47,188,178,0.25)" stroke-width="1"/>
+  <text x="327" y="397" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="13" fill="#2FBCB2">HRV Tracking</text>
 
-  <rect x="364" y="375" width="120" height="34" rx="17" fill="rgba(47,188,178,0.12)" stroke="rgba(47,188,178,0.25)" stroke-width="1"/>
-  <text x="424" y="397" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="13" fill="#2FBCB2">5 種呼吸技巧</text>
+  <rect x="404" y="375" width="130" height="34" rx="17" fill="rgba(47,188,178,0.12)" stroke="rgba(47,188,178,0.25)" stroke-width="1"/>
+  <text x="469" y="397" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="13" fill="#2FBCB2">5 Techniques</text>
 
   <!-- Bottom: App Store badge area -->
   <rect x="100" y="435" width="200" height="52" rx="14" fill="white"/>
   <text x="200" y="458" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="11" fill="#333">Download on the</text>
   <text x="200" y="477" text-anchor="middle" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="18" font-weight="700" fill="#000">App Store</text>
 
-  <!-- Subtitle EN -->
-  <text x="100" y="570" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="16" fill="rgba(255,255,255,0.3)">Breathing &amp; Calm · iPhone + Apple Watch</text>
+  <!-- Subtitle -->
+  <text x="100" y="570" font-family="-apple-system, SF Pro Display, Helvetica Neue" font-size="16" fill="rgba(255,255,255,0.3)">Breathing &amp; Calm · iPhone + Apple Watch · 中文版請點右上角 EN</text>
 </svg>
