@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iKima — 免費兌換碼申請 / Get a Free Offer Code</title>
+<meta name="description" content="Request a free iKima offer code — breathing & heart rate wellness app for Apple Watch.">
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --bg: #080e1a; --card: #0f1828;
+    --teal: #2FBCB2; --teal-light: #5de8e2;
+    --blue: #3382E5; --text: #ffffff;
+    --muted: rgba(255,255,255,0.55);
+    --border: rgba(47,188,178,0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+  a { color: var(--teal); text-decoration: none; }
+
+  [lang-show="zh"] { display: none; }
+  body.zh [lang-show="en"] { display: none; }
+  body.zh [lang-show="zh"] { display: revert; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--border); }
+  .logo { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+  .logo span { color: var(--teal); }
+  .lang-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all .2s; }
+  .lang-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+  main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 24px; }
+  .card { max-width: 520px; width: 100%; background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 48px 40px; text-align: center; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+  h1 { font-size: clamp(26px, 5vw, 34px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 18px; }
+  .desc { font-size: 15px; color: var(--muted); margin-bottom: 32px; line-height: 1.75; }
+  .desc strong { color: var(--text); }
+
+  .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, var(--teal-light), var(--teal)); color: #04211f; padding: 15px 32px; border-radius: 14px; font-weight: 700; font-size: 16px; transition: opacity .2s; width: 100%; justify-content: center; }
+  .cta-btn:hover { opacity: .9; color: #04211f; }
+
+  .fallback { margin-top: 20px; font-size: 13px; color: var(--muted); }
+  .fallback a { color: var(--teal); }
+
+  .steps { margin-top: 36px; padding-top: 32px; border-top: 1px solid var(--border); text-align: left; }
+  .step { display: flex; gap: 14px; margin-bottom: 16px; font-size: 14px; color: var(--muted); }
+  .step-num { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(47,188,178,.15); color: var(--teal); font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+
+  footer { text-align: center; padding: 32px 24px; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); margin: 0 8px; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 480px) {
+    nav { padding: 16px 20px; }
+    .card { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="logo">i<span>K</span>ima</a>
+  <button class="lang-btn" onclick="toggleLang()">繁中 / EN</button>
+</nav>
+
+<main>
+  <div class="card">
+    <p class="eyebrow" lang-show="en">Limited Offer</p>
+    <p class="eyebrow" lang-show="zh">限量名額</p>
+
+    <h1 lang-show="en">Get a free iKima offer code</h1>
+    <h1 lang-show="zh">免費領取 iKima 兌換碼</h1>
+
+    <p class="desc" lang-show="en">Tap the button below to open an email to us. We'll reply within <strong>48 hours</strong> with your free offer code and a step-by-step redeem guide.</p>
+    <p class="desc" lang-show="zh">按下方按鈕會開啟一封寄給我們的信，<strong>48 小時內</strong>會回覆您專屬的免費兌換碼，並附上圖文兌換教學。</p>
+
+    <a class="cta-btn" id="cta-mailto" href="#">
+      <span lang-show="en">Email us for a code</span>
+      <span lang-show="zh">免費索取兌換碼</span>
+    </a>
+
+    <p class="fallback" lang-show="en">Mail app won't open? Just send an email to <a href="mailto:ikima.wellness@gmail.com">ikima.wellness@gmail.com</a>.</p>
+    <p class="fallback" lang-show="zh">郵件 App 沒有自動開啟？直接寄信到 <a href="mailto:ikima.wellness@gmail.com">ikima.wellness@gmail.com</a> 也可以。</p>
+
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div><span lang-show="en">Tap the button above — your mail app opens with our address already filled in.</span><span lang-show="zh">按上方按鈕，郵件 App 會自動帶入我們的信箱。</span></div></div>
+      <div class="step"><div class="step-num">2</div><div><span lang-show="en">Just hit send — no need to type anything.</span><span lang-show="zh">直接按送出，不需要打字。</span></div></div>
+      <div class="step"><div class="step-num">3</div><div><span lang-show="en">We'll email your code + redeem guide within 48 hours.</span><span lang-show="zh">48 小時內收到兌換碼與圖文教學。</span></div></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="../">iKima Home</a>
+  <a href="https://teccat.github.io/ikima/privacy/">Privacy Policy</a>
+  <a href="https://teccat.github.io/ikima/support/">Support</a>
+</footer>
+
+<script>
+  var subjectZh = "iKima 兌換碼申請";
+  var bodyZh = "您好，我想索取 iKima 的免費兌換碼。\n\n（這封信會自動帶上我的 Email，麻煩協助寄送兌換碼與使用教學，謝謝！）";
+  var subjectEn = "iKima Offer Code Request";
+  var bodyEn = "Hi, I'd like to request a free iKima offer code.\n\n(This email includes my address automatically — please send the code and redeem guide. Thanks!)";
+
+  function updateMailto() {
+    var isZh = document.body.classList.contains('zh');
+    var subject = isZh ? subjectZh : subjectEn;
+    var body = isZh ? bodyZh : bodyEn;
+    document.getElementById('cta-mailto').href =
+      "mailto:ikima.wellness@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+
+  function toggleLang() {
+    document.body.classList.toggle('zh');
+    var isZh = document.body.classList.contains('zh');
+    document.documentElement.lang = isZh ? 'zh-Hant' : 'en';
+    localStorage.setItem('ikima-lang', isZh ? 'zh' : 'en');
+    updateMailto();
+  }
+
+  (function() {
+    var saved = localStorage.getItem('ikima-lang');
+    var browserZh = navigator.language && navigator.language.startsWith('zh');
+    if (saved === 'zh' || (!saved && browserZh)) {
+      document.body.classList.add('zh');
+      document.documentElement.lang = 'zh-Hant';
+    }
+    updateMailto();
+  })();
+</script>
+
+</body>
+</html>
