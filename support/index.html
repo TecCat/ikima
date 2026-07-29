@@ -16,10 +16,6 @@
   body { background: var(--bg); color: var(--text); font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif; line-height: 1.65; }
   a { color: var(--teal); text-decoration: none; }
 
-  [lang-show="zh"] { display: none; }
-  body.zh [lang-show="en"] { display: none; }
-  body.zh [lang-show="zh"] { display: revert; }
-
   nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid var(--border); }
   .logo { font-size: 20px; font-weight: 800; }
   .logo span { color: var(--teal); }
@@ -75,6 +71,15 @@
     nav { padding: 16px 20px; }
     .content { padding: 0 16px 60px; }
   }
+
+  /* Language toggle. !important is deliberate here: [lang-show] is a plain
+     attribute selector (specificity 0,1,0), so any component class that
+     also sets display (e.g. .contact-btn, .answer img — both already bit
+     us once) can out-specificity or out-order it. Forcing !important makes
+     show/hide win unconditionally instead of re-litigating this per class. */
+  [lang-show="zh"] { display: none !important; }
+  body.zh [lang-show="en"] { display: none !important; }
+  body.zh [lang-show="zh"] { display: revert !important; }
 </style>
 </head>
 <body>
@@ -267,7 +272,8 @@
         <div lang-show="zh">
           <p>大部分情況下，手機裝好 iKima 後，手錶版會在幾分鐘內自動安裝，不需要額外動作。如果手錶上還是沒看到（刪除後重裝時偶爾會發生），照下面步驟手動安裝：</p>
         </div>
-        <img src="watch-install-guide.png" alt="How to manually install iKima on Apple Watch — Watch app on iPhone, My Watch, Available Apps, tap Install / 如何在 Apple Watch 上手動安裝 iKima 步驟圖">
+        <img src="watch-install-guide-en.png" alt="How to manually install iKima on Apple Watch — Watch app on iPhone, My Watch, Available Apps, tap Install" lang-show="en">
+        <img src="watch-install-guide-zh.png" alt="如何在 Apple Watch 上手動安裝 iKima 步驟圖" lang-show="zh">
       </div>
     </details>
 
