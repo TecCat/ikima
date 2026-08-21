@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,8 +25,8 @@
 </head>
 <body>
 
-<div class="en" style="margin-bottom:16px;"><a href=/marketing/">← Back to iKima</a></div>
-<div class="zh" style="margin-bottom:16px;"><a href=/marketing/">← 回到 iKima 首頁</a></div>
+<div class="en" style="margin-bottom:16px;"><a href="/marketing/">← Back to iKima</a></div>
+<div class="zh" style="margin-bottom:16px;"><a href="/marketing/">← 回到 iKima 首頁</a></div>
 
 <h1>Privacy Policy · 隱私權政策</h1>
 <div class="meta">iKima · Last updated / 最後更新：May 28, 2026</div>
@@ -277,10 +277,20 @@
 <script>
 function setLang(lang) {
   document.body.classList.toggle('show-zh', lang === 'zh');
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.classList.toggle('active', btn.textContent.trim() === (lang === 'zh' ? '繁體中文' : 'English'));
   });
+  localStorage.setItem('ikima-lang', lang);
 }
+
+// Match the language already chosen on the marketing/support pages
+// (same 'ikima-lang' key), falling back to browser language.
+(function() {
+  var saved = localStorage.getItem('ikima-lang');
+  var browserZh = navigator.language && navigator.language.startsWith('zh');
+  setLang(saved === 'zh' || (!saved && browserZh) ? 'zh' : 'en');
+})();
 </script>
 
 </body>
