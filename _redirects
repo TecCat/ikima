@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects
+# Send the bare root path to the marketing landing page with a real 301
+# instead of relying on the client-side <meta http-equiv="refresh"> in
+# index.html (better for SEO/crawlers and avoids a blank-page flash).
+/  /marketing/  301
